@@ -10,7 +10,7 @@ import uvicorn
 app = FastAPI()
 
 # In-memory vector store
-chroma_client = chromadb.Client(Settings(chroma_db_impl="duckdb+parquet", persist_directory="./chroma"))
+chroma_client = chromadb.PersistentClient(path="./chroma")
 collection = chroma_client.get_or_create_collection("youtube_transcripts")
 
 # Load embedding model
