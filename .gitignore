@@ -1,2 +1,3 @@
 /venv
-/chroma
+/backend/app/chroma
+/backend/app/__pycache__

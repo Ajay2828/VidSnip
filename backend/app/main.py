@@ -3,8 +3,9 @@ from pydantic import BaseModel
 from youtube_transcript_api import YouTubeTranscriptApi
 from sentence_transformers import SentenceTransformer
 import chromadb
-from chromadb.config import Settings
 import uvicorn
+
+
 
 # Initialize FastAPI app
 app = FastAPI()
@@ -77,4 +78,4 @@ def ask_question(req: QuestionRequest):
     return {"answer": relevant_chunks}
 
 if __name__ == "__main__":
-    uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("app", host="0.0.0.0", port=8000, reload=True)
